@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Газ-Ремонт — блоки</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#052f58; --blue:#0075ff; --sea:#0a5095; --sea-2:#083f78;
+    --ink:#1e2a38; --muted:#5b6b7d; --line:#e3e9f1; --soft:#f3f7fc;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font:500 16px/1.5 Montserrat,Arial,sans-serif;color:var(--ink);background:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* шапка — как на сайте, только для контекста */
+  .hdr{background:#fff;border-bottom:1px solid var(--line)}
+  .hdr .wrap{display:flex;align-items:center;gap:32px;height:84px}
+  .hdr img{height:34px}
+  .hdr nav{display:flex;gap:28px;font:400 15px Arial,sans-serif;color:#1e1e1e}
+  .hdr .tel{margin-left:auto;font-weight:500}
+  .ctx{background:var(--soft);color:var(--muted);text-align:center;font-size:13px;padding:10px}
+
+  /* ===== блок 1: почему к нам ===== */
+  .why{background:linear-gradient(160deg,var(--sea) 0%,var(--sea-2) 100%);color:#fff;padding:88px 0 96px;position:relative;overflow:hidden}
+  .why::before{content:"";position:absolute;right:-160px;top:-160px;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle,rgba(0,117,255,.35),transparent 70%)}
+  .why .eyebrow{font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8cc2ff}
+  .why h2{font:800 46px/1.1 Montserrat;margin:12px 0 0;max-width:960px}
+  .why .lead{font-size:18px;color:#cfe3fb;max-width:640px;margin-top:16px}
+
+  .why-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;margin-top:48px;position:relative}
+  .why-grid .card{grid-column:span 2}
+  .why-grid .card:nth-child(n+4){grid-column:span 3}
+  .card .ic svg{width:30px;height:30px;color:var(--blue)}
+  .card{background:#fff;color:var(--ink);border-radius:20px;padding:28px 24px 26px;display:flex;flex-direction:column;
+    box-shadow:0 14px 40px rgba(2,24,48,.25);transition:transform .2s}
+  .card:hover{transform:translateY(-4px)}
+  .card .ic{width:56px;height:56px;border-radius:16px;background:#eaf3ff;display:grid;place-items:center}
+  .card .ic img{width:32px;height:32px}
+  .card .big{font:800 34px/1 Montserrat;color:var(--blue);margin-top:22px;white-space:nowrap}
+  .card .big small{font-size:18px;font-weight:700}
+  .card h3{font:800 18px/1.3 Montserrat;color:var(--navy);margin-top:10px}
+  .card p{font-size:14px;color:var(--muted);margin-top:8px}
+
+  .promise{margin-top:28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;position:relative;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:22px 28px}
+  .promise .rub{font:800 40px/1 Montserrat;color:#fff;white-space:nowrap}
+  .promise .rub span{color:#ffcf3f}
+  .promise .txt{flex:1;min-width:240px}
+  .promise .txt b{display:block;font-size:18px}
+  .promise .txt span{font-size:14px;color:#cfe3fb}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;font:700 16px Montserrat;border-radius:14px;padding:16px 26px;transition:filter .2s,transform .2s}
+  .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn.main{background:#ffcf3f;color:var(--navy)}
+  .btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
+  .btn svg{width:20px;height:20px}
+
+  /* ===== блок 2: партнёры ===== */
+  .part{padding:96px 0;background:#fff}
+  .part-top{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:end}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:#eaf3ff;color:var(--blue);font-weight:700;font-size:14px;
+    border-radius:999px;padding:8px 16px}
+  .badge svg{width:18px;height:18px}
+  .part h2{font:800 42px/1.12 Montserrat;color:var(--navy);margin-top:16px}
+  .part h2 em{font-style:normal;color:var(--blue)}
+  .part-top p{color:var(--muted);font-size:16px}
+  .perks{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .perks span{font-size:13px;font-weight:600;color:var(--navy);background:var(--soft);border-radius:10px;padding:8px 12px}
+
+  .brands{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+  .brand{border:1px solid var(--line);border-radius:18px;background:#fff;padding:22px 18px 16px;display:flex;flex-direction:column;
+    align-items:center;transition:border-color .2s,box-shadow .2s,transform .2s}
+  .brand:hover{border-color:#b8d6ff;box-shadow:0 12px 30px rgba(5,47,88,.1);transform:translateY(-3px)}
+  .brand .logo{height:96px;width:100%;display:grid;place-items:center;overflow:hidden}
+  .brand .logo.z2 img{transform:scale(2.1);filter:brightness(1.04) contrast(1.05)}
+  .brand .logo.z15 img{transform:scale(1.45)}
+  .brand .logo img{max-height:84px;max-width:90%;object-fit:contain;mix-blend-mode:multiply}
+  .brand .tag{margin-top:12px;font-size:12px;font-weight:700;color:#1a9b4b;display:flex;align-items:center;gap:6px}
+  .brand .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:#1a9b4b}
+  .brand .site{margin-top:6px;font-size:13px;color:var(--muted)}
+  .brand:hover .site{color:var(--blue)}
+
+  .warranty{margin-top:28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:var(--soft);border-radius:20px;padding:24px 28px}
+  .warranty .ic{width:56px;height:56px;border-radius:16px;background:#fff;display:grid;place-items:center;flex:none}
+  .warranty .ic img{width:32px}
+  .warranty .txt{flex:1;min-width:220px}
+  .warranty b{display:block;color:var(--navy);font-size:18px}
+  .warranty span{color:var(--muted);font-size:14px}
+  .warranty .btn.main{background:var(--blue);color:#fff}
+
+  .next{background:var(--sea);color:#fff;text-align:center;padding:40px 0;font:800 28px Montserrat;opacity:.55}
+
+  /* планшет */
+  @media (max-width:1100px){
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+    .why-grid .card,.why-grid .card:nth-child(n+4){grid-column:span 1}
+    .why-grid .card:last-child{grid-column:span 2}
+    .brands{grid-template-columns:repeat(4,1fr)}
+    .hdr nav{display:none}
+  }
+  @media (max-width:900px){
+    .why h2{font-size:38px}
+    .part h2{font-size:34px}
+    .part-top{grid-template-columns:1fr;gap:16px}
+    .brands{grid-template-columns:repeat(3,1fr)}
+  }
+  /* телефон */
+  @media (max-width:600px){
+    .wrap{padding:0 16px}
+    .hdr .wrap{height:64px}
+    .hdr img{height:26px}
+    .hdr .tel{font-size:14px}
+    .why{padding:56px 0 60px}
+    .why h2{font-size:28px}
+    .why .lead{font-size:15px}
+    .why-grid{grid-template-columns:1fr;gap:12px;margin-top:28px}
+    .why-grid .card,.why-grid .card:nth-child(n+4),.why-grid .card:last-child{grid-column:auto}
+    .card .ic svg{width:24px;height:24px}
+    .card{display:grid;grid-template-columns:48px 1fr;column-gap:14px;padding:18px 16px;border-radius:16px}
+    .card .ic{width:48px;height:48px;border-radius:14px;grid-row:span 3}
+    .card .ic img{width:26px;height:26px}
+    .card .big{font-size:24px;margin-top:0}
+    .card .big small{font-size:14px}
+    .card h3{font-size:15px;margin-top:4px}
+    .card p{font-size:13px;margin-top:4px}
+    .promise{padding:18px;gap:14px}
+    .promise .rub{font-size:32px}
+    .btns,.btn{width:100%}
+    .btn{justify-content:center}
+    .part{padding:56px 0}
+    .part h2{font-size:26px}
+    .brands{grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+    .brand{padding:14px 10px 12px;border-radius:14px}
+    .brand .logo{height:64px}
+    .brand .logo img{max-height:56px}
+    .brand .tag{font-size:10px;white-space:nowrap}
+    .brand .tag::before{width:6px;height:6px}
+    .site .long{display:none}
+    .hdr .tel{font-size:12px}
+    .warranty{padding:18px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap">
+    <img src="https://static.tildacdn.com/tild6135-6466-4165-a230-353732653636/photo.png" alt="Газ-Ремонт">
+    <nav><a>О нас</a><a>Отзывы</a><a>Услуги</a><a>Контакты</a></nav>
+    <a class="tel" href="tel:+79308404111">+7 (930) 840-41-11</a>
+  </div>
+</header>
+<div class="ctx">… блоки выше без изменений …</div>
+
+<!-- ===== Почему стоит обратиться к нам ===== -->
+<section class="why">
+  <div class="wrap">
+    <div class="eyebrow">Дорогие калужане</div>
+    <h2>Почему стоит обратиться к нам</h2>
+    <p class="lead">Приезжаем с запчастями, называем цену заранее и отвечаем за работу по договору</p>
+
+    <div class="why-grid">
+      <div class="card">
+        <div class="ic"><img src="https://static.tildacdn.com/tild3565-6463-4864-a530-313738323563/icon-lightning.svg" alt=""></div>
+        <div class="big">20–30 <small>секунд</small></div>
+        <h3>Отвечаем почти сразу</h3>
+        <p>Звонок или сообщение не повиснет: на связи весь рабочий день</p>
+      </div>
+      <div class="card">
+        <div class="ic"><img src="https://static.tildacdn.com/tild6134-3432-4734-b036-613565613736/icon-phone-ruble.svg" alt=""></div>
+        <div class="big">Цена <small>сразу</small></div>
+        <h3>Называем стоимость по телефону</h3>
+        <p>Опишите поломку, и вы узнаете цену ремонта до приезда мастера</p>
+      </div>
+      <div class="card">
+        <div class="ic"><img src="https://static.tildacdn.com/tild6634-3534-4862-a233-393636353232/icon-briefcase.svg" alt=""></div>
+        <div class="big">90%</div>
+        <h3>Чиним за один визит</h3>
+        <p>Мастер возит с собой запчасти, второй раз ждать не придётся</p>
+      </div>
+      <div class="card">
+        <div class="ic"><img src="https://static.tildacdn.com/tild3735-3039-4662-b634-663235333538/icon-contract-shield.svg" alt=""></div>
+        <div class="big">Договор</div>
+        <h3>Работаем с гарантией</h3>
+        <p>Все условия на бумаге, а за результат отвечаем гарантией</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+        <div class="big">АСЦ</div>
+        <h3>Авторизованный сервисный центр</h3>
+        <p>Мастера обучены производителем</p>
+      </div>
+    </div>
+
+    <div class="promise">
+      <div class="txt">
+        <b>Сломалась колонка, плита или котёл?</b>
+        <span>Позвоните или напишите, мастер приедет в удобное время</span>
+      </div>
+      <div class="btns">
+        <a class="btn main" href="tel:+79308404111">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          Вызвать мастера
+        </a>
+        <a class="btn ghost" href="https://max.ru/u/f9LHodD0cOLwRGdHMOMNtTILsio5ZeywUrpEq_VH6_TCS4azaaqI8W82amQ" target="_blank" rel="noopener">Написать в MAX</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Наши партнёры ===== -->
+<section class="part">
+  <div class="wrap">
+    <div class="part-top">
+      <div>
+        <span class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+          Наши партнёры
+        </span>
+        <h2>Авторизованный <em>сервисный центр</em> торговых марок</h2>
+      </div>
+      <div>
+        <p>Ремонтируем по технологиям производителя, ставим оригинальные запчасти и проводим гарантийный ремонт</p>
+        <div class="perks"><span>Оригинальные запчасти</span><span>Гарантийный ремонт</span><span>Обученные мастера</span></div>
+      </div>
+    </div>
+
+    <div class="brands">
+      <a class="brand" href="https://ladogaz.ru/" target="_blank" rel="noopener">
+        <div class="logo z2"><img src="https://static.tildacdn.com/tild3132-3131-4261-a562-353330383736/ladogaz-logo.jpg" alt="Ладогаз"></div>
+        <div class="site">Сайт<span class="long"> производителя</span> ↗</div>
+      </a>
+      <div class="brand">
+        <div class="logo z15"><img src="https://static.tildacdn.com/tild6434-6565-4336-a333-383737303363/f76d073d2245f46339f0.png" alt="RGA"></div>
+        
+      </div>
+      <a class="brand" href="https://baltgaz.ru/" target="_blank" rel="noopener">
+        <div class="logo"><img src="https://static.tildacdn.com/tild3135-6234-4861-b339-393539306530/21765_gazovaya-kolon.jpg" alt="BaltGaz Neva"></div>
+        <div class="site">Сайт<span class="long"> производителя</span> ↗</div>
+      </a>
+      <div class="brand">
+        <div class="logo z15"><img src="https://static.tildacdn.com/tild3731-3836-4062-a439-333638343930/79718299_w640_h640_o.webp" alt="Oasis"></div>
+        
+      </div>
+      <a class="brand" href="https://mizudo.ru/" target="_blank" rel="noopener">
+        <div class="logo"><img src="https://static.tildacdn.com/tild3339-3532-4935-b334-623566326539/noroot.png" alt="Mizudo"></div>
+        <div class="site">Сайт<span class="long"> производителя</span> ↗</div>
+      </a>
+      <a class="brand" href="https://www.navien.ru/" target="_blank" rel="noopener">
+        <div class="logo"><img src="https://static.tildacdn.com/tild3130-6134-4233-b439-656632613362/xvp9zfa6qwkaqhfrospl.png" alt="Navien"></div>
+        <div class="site">Сайт<span class="long"> производителя</span> ↗</div>
+      </a>
+      <a class="brand" href="https://gefest.com/ru/" target="_blank" rel="noopener">
+        <div class="logo"><img src="https://static.tildacdn.com/tild3362-3334-4630-b439-333539346537/9nvd8whp2387gqyy62ge.jpg" alt="Gefest"></div>
+        <div class="site">Сайт<span class="long"> производителя</span> ↗</div>
+      </a>
+      <a class="brand" href="https://exiteq.com/" target="_blank" rel="noopener">
+        <div class="logo z15"><img src="https://static.tildacdn.com/tild6364-6231-4439-a363-303561653637/m1hcd2v8s1i21jd4a6wb.jpg" alt="Exiteq"></div>
+        <div class="site">Сайт<span class="long"> производителя</span> ↗</div>
+      </a>
+    </div>
+
+    <div class="warranty">
+      <div class="ic"><img src="https://static.tildacdn.com/tild3735-3039-4662-b634-663235333538/icon-contract-shield.svg" alt=""></div>
+      <div class="txt">
+        <b>Техника ещё на гарантии?</b>
+        <span>Отремонтируем бесплатно по условиям производителя, расскажем, какие нужны документы</span>
+      </div>
+      <a class="btn main" href="https://xn----7sbiki6ahhpy.xn--p1ai/#rec2117981881">Условия гарантийного ремонта</a>
+    </div>
+  </div>
+</section>
+
+<div class="next">Как мы работаем …</div>
+
+</body>
+</html>

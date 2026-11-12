@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Eckstein & Partner — макеты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{display:flex;flex-direction:column;font-family:Inter,system-ui,sans-serif;background:#0b1b30}
+.bar{flex:none;display:flex;align-items:center;gap:16px;padding:10px 16px;background:#0b1b30;color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.25);z-index:2}
+.bar .t{font-size:14px;font-weight:600;color:#c3d3e8;white-space:nowrap}
+.tabs{display:flex;gap:6px;background:rgba(255,255,255,.08);padding:4px;border-radius:10px}
+.tabs button{font:inherit;font-size:14px;font-weight:600;border:0;background:transparent;color:#c3d3e8;padding:8px 14px;border-radius:7px;cursor:pointer;white-space:nowrap}
+.tabs button.on{background:#fff;color:#0b1b30}
+.tabs small{font-weight:500;opacity:.7;margin-left:4px}
+.note{margin-left:auto;font-size:12px;color:#8ea5c2;white-space:nowrap}
+iframe{flex:1;width:100%;border:0;background:#fff}
+@media (max-width:760px){
+  .bar{padding:8px 10px;gap:8px}
+  .bar .t,.note{display:none}
+  .tabs{flex:1;justify-content:space-between}
+  .tabs button{flex:1;padding:8px 6px}
+  .tabs small{display:none}
+}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="t">Eckstein & Partner · варианты главной</div>
+  <div class="tabs">
+    <button data-v="a-classic.html" class="on">А<small>Классика</small></button>
+    <button data-v="b-editorial.html">Б<small>Деловой</small></button>
+    <button data-v="c-modern.html">В<small>Современный</small></button>
+  </div>
+  <div class="note">Макет: кнопки и ссылки пока не работают</div>
+</div>
+<iframe id="f" src="a-classic.html" title="Макет"></iframe>
+<script>
+const f=document.getElementById('f');
+const btns=[...document.querySelectorAll('.tabs button')];
+let ratio=0;
+function pick(v){
+  try{const d=f.contentDocument.documentElement;ratio=d.scrollTop/Math.max(1,d.scrollHeight-d.clientHeight);}catch(e){ratio=0}
+  btns.forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+  f.src=v;
+  try{history.replaceState(null,'','#'+v.charAt(0))}catch(e){}
+}
+f.addEventListener('load',()=>{
+  try{const d=f.contentDocument.documentElement;setTimeout(()=>{d.scrollTop=ratio*(d.scrollHeight-d.clientHeight)},60)}catch(e){}
+});
+btns.forEach(b=>b.addEventListener('click',()=>pick(b.dataset.v)));
+const h=location.hash.slice(1);
+const start=btns.find(b=>b.dataset.v.charAt(0)===h);
+if(start&&h!=='a'){btns.forEach(b=>b.classList.toggle('on',b===start));f.src=start.dataset.v}
+</script>
+</body>
+</html>

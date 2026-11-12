@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DLTN — концепт логотипа и шевронов</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#0e0f10;--card:#16181a;--line:#24272a;--txt:#e9e6df;--mut:#8b8d8f;--acc:#e2581f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.55 "Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header{padding:56px 0 28px;border-bottom:1px solid var(--line)}
+.tag{color:var(--acc);font-size:13px;letter-spacing:.25em;text-transform:uppercase;font-weight:600}
+h1{font-size:clamp(30px,5vw,48px);margin:10px 0 8px;letter-spacing:.02em}
+.lead{color:var(--mut);max-width:720px;margin:0}
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+h2{font-size:22px;margin:0 0 6px;display:flex;align-items:center;gap:12px}
+h2 span{color:var(--acc);font-size:14px;letter-spacing:.2em}
+.sub{color:var(--mut);margin:0 0 22px;max-width:760px}
+.shot{display:block;width:100%;border-radius:14px;border:1px solid var(--line);background:#000}
+a.zoom{display:block;cursor:zoom-in}
+.refs{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+.refs a{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000;display:flex;align-items:center;justify-content:center;aspect-ratio:1}
+.refs a.big{grid-row:span 2;aspect-ratio:auto}
+.refs img{width:100%;height:100%;object-fit:cover}
+.refs a.big img{object-fit:contain}
+.cap{color:var(--mut);font-size:14px;margin-top:10px}
+ul.pts{margin:18px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+ul.pts li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:#cfccc5;font-size:15px}
+ul.pts b{color:var(--txt);display:block;margin-bottom:2px}
+footer{padding:32px 0 48px;color:var(--mut);font-size:14px}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:9;overscroll-behavior:contain;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:96vw;max-height:94vh;border-radius:8px}
+body.lock{overflow:hidden}
+@media(max-width:700px){.refs{grid-template-columns:1fr 1fr}.refs a.big{grid-column:span 2;grid-row:auto}}
+</style></head>
+<body>
+<header><div class="wrap">
+  <div class="tag">концепт · DLTN</div>
+  <h1>Логотип стрелковой команды DLTN</h1>
+  <p class="lead">Буква T в виде меча лезвием вниз в круге прицела. Шрифт и меч сделаны заново, весь знак собран в векторе, поэтому подходит и для экрана, и для производства шевронов, нанесения на одежду и флаги</p>
+</div></header>
+
+<main class="wrap">
+<section>
+  <h2><span>01</span>Основной знак</h2>
+  <p class="sub">Горизонтальный логотип, отдельная иконка из буквы T, версии для светлого фона и в один цвет для гравировки и вышивки</p>
+  <a class="zoom" href="img/logo.png"><img class="shot" src="img/logo.png" alt="Основной знак DLTN"></a>
+  <ul class="pts">
+    <li><b>Меч</b>Простая геометрия без мелких деталей, читается и на шевроне 3 см, и на флаге</li>
+    <li><b>Прицел</b>Один акцентный цвет, в однотонной версии становится тем же цветом, что и буквы</li>
+    <li><b>Иконка</b>T в прицеле работает сама по себе: аватар, нашивка, гравировка на снаряжении</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span>02</span>Варианты шрифта</h2>
+  <p class="sub">Три характера на выбор: плотный, технический и армейский трафарет</p>
+  <a class="zoom" href="img/concepts.png"><img class="shot" src="img/concepts.png" alt="Варианты шрифта"></a>
+</section>
+
+<section>
+  <h2><span>03</span>Шевроны</h2>
+  <p class="sub">Три варианта: ПВХ в стилистике 5.11 с объёмными буквами и оранжевой плашкой, круглый ПВХ и вышитый щит. Размеры и подпись на круглом шевроне примерные, меняются под ваши задачи</p>
+  <a class="zoom" href="img/patches.jpg"><img class="shot" src="img/patches.jpg" alt="Шевроны DLTN"></a>
+</section>
+
+<section>
+  <h2><span>04</span>Исходное задание</h2>
+  <p class="sub">Ваш пример и референсы, от которых шли</p>
+  <div class="refs">
+    <a class="zoom big" href="img/ref1.jpg"><img src="img/ref1.jpg" alt="Пример заказчика"></a>
+    <a class="zoom" href="img/ref5.jpg"><img src="img/ref5.jpg" alt="5.11"></a>
+    <a class="zoom" href="img/ref2.jpg"><img src="img/ref2.jpg" alt="Референс"></a>
+    <a class="zoom" href="img/ref4.jpg"><img src="img/ref4.jpg" alt="Референс"></a>
+    <a class="zoom" href="img/ref6.jpg"><img src="img/ref6.jpg" alt="Референс"></a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Концепт к заказу на Kwork · все изображения можно открыть крупно</div></footer>
+
+<div class="lb" id="lb"><img alt=""></div>
+<script>
+const lb=document.getElementById('lb'),li=lb.querySelector('img');
+document.querySelectorAll('a.zoom').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();li.src=a.href;lb.classList.add('on');document.body.classList.add('lock')}));
+lb.addEventListener('click',()=>{lb.classList.remove('on');document.body.classList.remove('lock')});
+</script>
+</body></html>

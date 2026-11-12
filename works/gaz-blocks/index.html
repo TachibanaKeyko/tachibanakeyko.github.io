@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Газ-Ремонт — набросок блоков</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font:600 15px/1.5 Montserrat,sans-serif;background:#062a4f;color:#cfe3fb;min-height:100vh;display:flex;flex-direction:column}
+  .bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 20px;background:#052f58;border-bottom:4px solid #0075ff}
+  .bar b{font:800 18px Montserrat;color:#fff;margin-right:auto}
+  .tabs{display:flex;gap:6px}
+  .tabs button{font:600 14px Montserrat;background:transparent;color:#cfe3fb;border:1px solid #2d5b8a;border-radius:8px;padding:8px 14px;cursor:pointer}
+  .tabs button.on{background:#0075ff;color:#fff;border-color:#0075ff}
+  .bar a{color:#8cc2ff;font-size:14px}
+  .stage{flex:1;display:flex;justify-content:center;padding:24px 12px;overflow:auto}
+  iframe{background:#fff;border:0;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.4);height:calc(100vh - 120px);transition:width .25s}
+</style>
+</head>
+<body>
+<div class="bar">
+  <b>Газ-Ремонт — «Почему к нам» и «Партнёры»</b>
+  <div class="tabs">
+    <button data-w="100%" class="on">Десктоп</button>
+    <button data-w="820px">Планшет</button>
+    <button data-w="390px">Телефон</button>
+  </div>
+  <div class="tabs" id="ver">
+    <button data-src="was.html">Было</button>
+    <button data-src="blocks.html" class="on">Стало</button>
+  </div>
+  <a href="blocks.html" target="_blank">Открыть отдельно</a>
+</div>
+<div class="stage"><iframe id="f" src="blocks.html" style="width:100%"></iframe></div>
+<script>
+  const f=document.getElementById('f');
+  const set=w=>{f.style.width=w;document.querySelectorAll('.tabs:not(#ver) button').forEach(b=>b.classList.toggle('on',b.dataset.w===w))};
+  document.querySelectorAll('.tabs:not(#ver) button').forEach(b=>b.onclick=()=>{set(b.dataset.w);location.hash=b.textContent.trim()});
+  document.querySelectorAll('#ver button').forEach(b=>b.onclick=()=>{f.src=b.dataset.src;document.querySelectorAll('#ver button').forEach(x=>x.classList.toggle('on',x===b))});
+  const h=decodeURIComponent(location.hash.slice(1));
+  document.querySelectorAll('.tabs:not(#ver) button').forEach(b=>{if(b.textContent.trim()===h)set(b.dataset.w)});
+</script>
+</body>
+</html>

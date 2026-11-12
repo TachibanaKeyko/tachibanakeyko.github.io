@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tachibana Keyko — портфолио</title>
+<meta name="description" content="Сайты, логотипы, графика, видео, Unity и 3D. Работы на заказ и концепты">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1c1622; --panel:#2a2231; --panel2:#332a3b; --text:#f3e9f1; --muted:#a495a6;
+  --accent:#ff9ec7; --accent-text:#3a1430; --lilac:#c4a7ff; --mint:#9be8cf; --line:#3d3245;
+}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Nunito,system-ui,sans-serif;
+  background-image:radial-gradient(900px 500px at 85% -10%,#ff9ec722,transparent 70%),
+                   radial-gradient(700px 500px at -10% 30%,#c4a7ff18,transparent 70%)}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* лепестки */
+.petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.petals i{position:absolute;top:-20px;width:12px;height:9px;border-radius:12px 0 12px 0;
+  background:linear-gradient(135deg,#ffc6dd,#ff9ec7);opacity:.55;animation:fall linear infinite}
+@keyframes fall{to{transform:translate(-120px,110vh) rotate(540deg)}}
+@media (prefers-reduced-motion:reduce){.petals{display:none}}
+main,header,footer{position:relative;z-index:1}
+
+header.wrap{padding-top:72px;padding-bottom:40px}
+.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(40px,6vw,68px);line-height:1.05;margin:10px 0 18px;font-weight:800}
+h1 span{color:var(--accent)}
+.lead{max-width:640px;color:var(--muted);font-size:18px;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:14px;font-weight:800;
+  text-decoration:none;background:var(--accent);color:var(--accent-text);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+.stats{display:flex;gap:28px;margin-top:36px;flex-wrap:wrap}
+.stats b{display:block;font-size:30px;color:var(--text)}
+.stats div{color:var(--muted);font-size:14px}
+
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px auto 48px}
+.skill{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px}
+.skill svg{width:26px;height:26px;color:var(--accent)}
+.skill h4{margin:8px 0 4px;font-size:16px}
+.skill p{margin:0;color:var(--muted);font-size:14px}
+
+.bar{position:sticky;top:0;z-index:5;background:#1c1622e6;backdrop-filter:blur(10px);
+  padding:14px 0;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.chip{flex:none;font:inherit;font-weight:700;font-size:14px;padding:8px 16px;border-radius:999px;cursor:pointer;
+  background:var(--panel);color:var(--muted);border:1px solid var(--line)}
+.chip.on{background:var(--accent);color:var(--accent-text);border-color:var(--accent)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:60px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:#ff9ec766}
+.pic{display:block;aspect-ratio:16/10;overflow:hidden;background:var(--panel2)}
+.pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.card:hover .pic img{transform:scale(1.04)}
+.body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.badge{align-self:flex-start;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px;
+  background:#c4a7ff22;color:var(--lilac)}
+.badge.order{background:#9be8cf22;color:var(--mint)}
+.badge.own{background:#ff9ec722;color:var(--accent)}
+h3{margin:10px 0 6px;font-size:18px;line-height:1.3}
+.body p{margin:0;color:var(--muted);font-size:14.5px}
+blockquote{margin:12px 0 0;padding:10px 12px;border-left:3px solid var(--accent);background:#ff9ec70f;
+  border-radius:0 10px 10px 0;font-size:14px;font-style:italic}
+.open{margin-top:auto;padding-top:14px;color:var(--accent);font-weight:800;text-decoration:none;font-size:14px}
+
+.block{padding-bottom:56px}
+.block h2{font-size:30px;margin:0 0 18px}
+.sub{color:var(--muted);margin:-8px 0 20px}
+.revs{columns:3 300px;column-gap:16px}
+.rev{break-inside:avoid;margin:0 0 16px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+.rev blockquote{margin:0;padding:0;border:0;background:none;font-size:15px}
+.rev figcaption{margin-top:10px;color:var(--accent);font-weight:700;font-size:13px}
+.year{margin-bottom:20px}
+.year h4{margin:0 0 10px;color:var(--lilac);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13.5px;color:var(--text)}
+footer.wrap{border-top:1px solid var(--line);padding-top:40px;padding-bottom:56px;text-align:center;color:var(--muted)}
+footer h2{color:var(--text);margin:0 0 8px;font-size:28px}
+footer p{margin:0 0 20px}
+
+@media (max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}.skills{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.wrap{padding:0 16px}header.wrap{padding-top:48px;padding-bottom:28px}.grid{grid-template-columns:1fr}
+  .lead{font-size:16px}.stats{gap:20px}}
+</style>
+</head>
+<body>
+<div class="petals" id="petals"></div>
+
+<header class="wrap">
+  <div class="eyebrow">Портфолио</div>
+  <h1>Tachibana <span>Keyko</span></h1>
+  <p class="lead">Делаю сайты, логотипы и графику, игры на Unity, монтирую видео и свожу звук. Пишу на C# и Python, автоматизирую рутину. Быстро, по ТЗ и с вниманием к деталям</p>
+  <div class="cta">
+    <a class="btn" href="https://kwork.ru/user/tachi" target="_blank" rel="noopener">Заказать на Kwork</a>
+    <a class="btn ghost" href="#works">Смотреть работы ↓</a>
+  </div>
+  <div class="stats">
+    <div><b>60</b>заказов на Kwork</div>
+    <div><b>5.0★</b>41 отзыв, все положительные</div>
+    <div><b>47%</b>повторных заказов</div>
+    <div><b>с 2021</b>на фрилансе</div>
+  </div>
+</header>
+
+<section class="wrap skills">
+  <div class="skill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h4"/></svg><h4>Сайты</h4><p>Вёрстка, редизайн, Тильда, WordPress</p></div>
+  <div class="skill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg><h4>Графика</h4><p>Логотипы, баннеры, ВК, инфографика, пиксель-арт</p></div>
+  <div class="skill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3z"/></svg><h4>Видео и звук</h4><p>Монтаж, субтитры, караоке, сведение</p></div>
+  <div class="skill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg><h4>Игры и 3D</h4><p>Unity, мобильные игры, UI, Blender</p></div>
+</section>
+
+<main id="works">
+  <div class="bar"><div class="wrap"><div class="chips"><button class="chip on" data-f="all">Все</button><button class="chip" data-f="web">Сайты</button><button class="chip" data-f="gfx">Логотипы и графика</button><button class="chip" data-f="video">Видео и звук</button><button class="chip" data-f="3d">Игры и 3D</button></div></div></div>
+  <div class="wrap grid">
+<article class="card" data-cat="web">
+  <a class="pic" href="https://avtomatika.ru/zakupki" target="_blank" rel="noopener"><img src="img/avto-zakupki.jpg" alt="avtomatika.ru — страница «Закупки»" loading="lazy"></a>
+  <div class="body"><span class="badge order">Заказ</span><h3>avtomatika.ru — страница «Закупки»</h3><p>Новый раздел в фирменном стиле сайта промышленной автоматики: заявка покупателя, подписка для поставщиков, адаптив. Страница работает на сайте заказчика</p><blockquote>«Хороший дизайнер, всегда на связи, все замечания устраняются оперативно»</blockquote><a class="open" href="https://avtomatika.ru/zakupki" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="web">
+  <a class="pic" href="https://avtomatika.ru/uslugi/programmirovanie-wiren-board" target="_blank" rel="noopener"><img src="img/avto-preview.jpg" alt="avtomatika.ru — страницы брендов" loading="lazy"></a>
+  <div class="body"><span class="badge order">Заказ</span><h3>avtomatika.ru — страницы брендов</h3><p>Редизайн страниц Intesis и Wiren Board: первый экран, цифры, каталог шлюзов. Страницы работают на сайте заказчика</p><a class="open" href="https://avtomatika.ru/uslugi/programmirovanie-wiren-board" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="web">
+  <a class="pic" href="works/ep-preview/" target="_blank" rel="noopener"><img src="img/ep-preview.jpg" alt="Eckstein &amp; Partner — главная" loading="lazy"></a>
+  <div class="body"><span class="badge order">Заказ</span><h3>Eckstein &amp; Partner — главная</h3><p>Три варианта главной для консалтинговой сети (классика, деловой, современный). До этого защитила форму сайта от спам-бота</p><blockquote>«Просто замечательный исполнитель! Всегда всё чётко по ТЗ»</blockquote><a class="open" href="works/ep-preview/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="web">
+  <a class="pic" href="works/gaz-blocks/" target="_blank" rel="noopener"><img src="img/gaz-blocks.jpg" alt="Газ-Ремонт — блоки на Тильде" loading="lazy"></a>
+  <div class="body"><span class="badge order">Заказ</span><h3>Газ-Ремонт — блоки на Тильде</h3><p>Блоки «Почему стоит обратиться к нам» и «Партнёры» для сервиса газового оборудования в Калуге, переключатель «было / стало»</p><blockquote>«Обратился повторно и снова остался доволен… Приятно работать с ответственным»</blockquote><a class="open" href="works/gaz-blocks/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="web">
+  <a class="pic" href="https://tachibanakeyko.github.io/dozimetriya-hero-concept/" target="_blank" rel="noopener"><img src="img/dozimetriya.jpg" alt="Dozimetriya.kz — первый экран" loading="lazy"></a>
+  <div class="body"><span class="badge">Концепт</span><h3>Dozimetriya.kz — первый экран</h3><p>Концепт для лаборатории радиационного контроля: тёмная тема, живой «замер» с графиком, кнопки расчёта и WhatsApp</p><a class="open" href="https://tachibanakeyko.github.io/dozimetriya-hero-concept/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="gfx">
+  <a class="pic" href="https://tachibanakeyko.github.io/ptved-banner-concept/" target="_blank" rel="noopener"><img src="img/ptved.jpg" alt="ПТВЭД — баннер для выставки" loading="lazy"></a>
+  <div class="body"><span class="badge order">Заказ</span><h3>ПТВЭД — баннер для выставки</h3><p>Баннер 1×1,5 м про клеммную коробку для производителя электрооборудования. Макет в масштабе 1 px = 1 мм, логотип в векторе</p><a class="open" href="https://tachibanakeyko.github.io/ptved-banner-concept/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="gfx">
+  <a class="pic" href="https://tachibanakeyko.github.io/emotions-faces-concept/" target="_blank" rel="noopener"><img src="img/emotions.jpg" alt="«Эмоции» — макет А5" loading="lazy"></a>
+  <div class="body"><span class="badge order">Заказ</span><h3>«Эмоции» — макет А5</h3><p>Раздаточный лист для детей: три персонажа и круги эмоций, всё в векторе, под печать</p><blockquote>«Профессиональный подход. Всегда на связи»</blockquote><a class="open" href="https://tachibanakeyko.github.io/emotions-faces-concept/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="gfx">
+  <div class="pic"><img src="img/pixel.jpg" alt="Пиксель-арт персонаж" loading="lazy"></div>
+  <div class="body"><span class="badge order">Заказ</span><h3>Пиксель-арт персонаж</h3><p>Персонаж 38×76 в восьми направлениях для изометрической игры, под палитру и свет готовой сцены</p><blockquote>«Быстро, по делу, результат устраивает, к правкам относится с пониманием. Рекомендую»</blockquote></div>
+</article>
+<article class="card" data-cat="gfx">
+  <a class="pic" href="works/dltn-concept/" target="_blank" rel="noopener"><img src="img/dltn.jpg" alt="DLTN — логотип и шевроны" loading="lazy"></a>
+  <div class="body"><span class="badge">Концепт</span><h3>DLTN — логотип и шевроны</h3><p>Знак стрелковой команды: буква T в виде меча в прицеле. Версии для тёмного и светлого фона, вышивки и гравировки</p><a class="open" href="works/dltn-concept/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="gfx">
+  <a class="pic" href="https://tachibanakeyko.github.io/greenee-logo-concept/" target="_blank" rel="noopener"><img src="img/greenee.jpg" alt="GreeNee — логотип" loading="lazy"></a>
+  <div class="body"><span class="badge">Концепт</span><h3>GreeNee — логотип</h3><p>Лиана, которая обвивает G. Цветная, чёрная и инверсная версии</p><a class="open" href="https://tachibanakeyko.github.io/greenee-logo-concept/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="gfx">
+  <a class="pic" href="https://tachibanakeyko.github.io/podhod-logo/" target="_blank" rel="noopener"><img src="img/podhod.jpg" alt="«Подход» — эскизы логотипа" loading="lazy"></a>
+  <div class="body"><span class="badge">Концепт</span><h3>«Подход» — эскизы логотипа</h3><p>Три идеи для маркетингового агентства: ступени роста, выход из лабиринта, вход в форме П</p><a class="open" href="https://tachibanakeyko.github.io/podhod-logo/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="gfx">
+  <a class="pic" href="https://tachibanakeyko.github.io/spectransstroy-logo-concept/" target="_blank" rel="noopener"><img src="img/sts.jpg" alt="Спецтрансстрой — логотип и баннер" loading="lazy"></a>
+  <div class="body"><span class="badge">Концепт</span><h3>Спецтрансстрой — логотип и баннер</h3><p>Монограмма СТС для аренды спецтехники и баннер под неё</p><a class="open" href="https://tachibanakeyko.github.io/spectransstroy-logo-concept/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="gfx">
+  <a class="pic" href="https://tachibanakeyko.github.io/matresha-vk-concept/" target="_blank" rel="noopener"><img src="img/matresha.jpg" alt="«Матрёша» — оформление ВКонтакте" loading="lazy"></a>
+  <div class="body"><span class="badge">Концепт</span><h3>«Матрёша» — оформление ВКонтакте</h3><p>Обложка, аватар, иконки разделов и шаблоны постов для доставки еды</p><a class="open" href="https://tachibanakeyko.github.io/matresha-vk-concept/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="gfx">
+  <a class="pic" href="https://tachibanakeyko.github.io/dining-table-infographic/" target="_blank" rel="noopener"><img src="img/table.jpg" alt="Инфографика для маркетплейса" loading="lazy"></a>
+  <div class="body"><span class="badge">Концепт</span><h3>Инфографика для маркетплейса</h3><p>Слайды карточки товара для раздвижного стола: размеры, материалы, нагрузка</p><a class="open" href="https://tachibanakeyko.github.io/dining-table-infographic/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="gfx">
+  <a class="pic" href="works/rust-thumbnail-concept/" target="_blank" rel="noopener"><img src="img/rust.jpg" alt="Обложка YouTube по Rust" loading="lazy"></a>
+  <div class="body"><span class="badge">Концепт</span><h3>Обложка YouTube по Rust</h3><p>Кликабельная обложка 1280×720 с крупным заголовком</p><a class="open" href="works/rust-thumbnail-concept/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="gfx">
+  <div class="pic"><img src="img/dastudio.jpg" alt="ДА СТУДИЯ — оформление ВКонтакте" loading="lazy"></div>
+  <div class="body"><span class="badge order">Заказ</span><h3>ДА СТУДИЯ — оформление ВКонтакте</h3><p>Редизайн группы ремонтной компании: несколько обложек «было / стало», плитки меню, аватар, логотип «ДА» в векторе, исходники для Illustrator и Photoshop</p><blockquote>«Исполнитель справился прекрасно, будем обращаться снова. Спасибо за отзывчивость и профессионализм»</blockquote></div>
+</article>
+<article class="card" data-cat="gfx">
+  <div class="pic"><img src="img/fixera.jpg" alt="FIXERA — логотип и аватар" loading="lazy"></div>
+  <div class="body"><span class="badge order">Заказ</span><h3>FIXERA — логотип и аватар</h3><p>Знак FX и аватар для ВКонтакте по примеру заказчика, с векторными исходниками</p></div>
+</article>
+<article class="card" data-cat="gfx">
+  <div class="pic"><img src="img/flatron.jpg" alt="Фото товаров для каталога" loading="lazy"></div>
+  <div class="body"><span class="badge order">Заказ</span><h3>Фото товаров для каталога</h3><p>Серия карточек 880×880 для мебельной фурнитуры: единый фон, отражение, чистые края</p></div>
+</article>
+<article class="card" data-cat="gfx">
+  <div class="pic"><img src="img/gladgames.jpg" alt="Glad Games — живой логотип" loading="lazy"></div>
+  <div class="body"><span class="badge">Концепт</span><h3>Glad Games — живой логотип</h3><p>Золотой логотип с бликами, искрами и пылью, анимация в WebM с прозрачностью</p></div>
+</article>
+<article class="card" data-cat="gfx">
+  <div class="pic"><img src="img/agrovektor.jpg" alt="«Агровектор» — логотип" loading="lazy"></div>
+  <div class="body"><span class="badge">Концепт</span><h3>«Агровектор» — логотип</h3><p>Знак для агротеха: росток, стрелка роста и цифровая сетка</p></div>
+</article>
+<article class="card" data-cat="gfx">
+  <div class="pic"><img src="img/zernyshko.jpg" alt="«Зёрнышко» — логотип кофейни" loading="lazy"></div>
+  <div class="body"><span class="badge">Концепт</span><h3>«Зёрнышко» — логотип кофейни</h3><p>Кофейное зерно, которое складывается в сердце, тёплая рукописная типографика</p></div>
+</article>
+<article class="card" data-cat="gfx">
+  <div class="pic"><img src="img/ripe.jpg" alt="Ripe — логотип" loading="lazy"></div>
+  <div class="body"><span class="badge">Концепт</span><h3>Ripe — логотип</h3><p>Сочный фруктовый знак с буквой S внутри персика</p></div>
+</article>
+<article class="card" data-cat="video">
+  <a class="pic" href="https://tachibanakeyko.github.io/karaoke-concept/" target="_blank" rel="noopener"><img src="img/karaoke.jpg" alt="Караоке-ролик" loading="lazy"></a>
+  <div class="body"><span class="badge order">Заказ</span><h3>Караоке-ролик</h3><p>Клип 1:45 к каверу: подсветка текста по слогам точно в такт, поверх Live2D-анимации художника, 1080p60</p><blockquote>«Всё было сделано супер! Правки быстро выполнялись, качеством итогового результата очень доволен»</blockquote><a class="open" href="https://tachibanakeyko.github.io/karaoke-concept/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="video">
+  <a class="pic" href="https://tachibanakeyko.github.io/subtitles-concept/" target="_blank" rel="noopener"><img src="img/subtitles.jpg" alt="Стили субтитров" loading="lazy"></a>
+  <div class="body"><span class="badge">Концепт</span><h3>Стили субтитров</h3><p>Четыре стиля под классическую музыку: концертный, кино, слово за словом, плашка</p><a class="open" href="https://tachibanakeyko.github.io/subtitles-concept/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="video">
+  <a class="pic" href="works/gaz-preview/" target="_blank" rel="noopener"><img src="img/gaz-video.jpg" alt="Ролик-визитка" loading="lazy"></a>
+  <div class="body"><span class="badge">Концепт</span><h3>Ролик-визитка</h3><p>Пятисекундная заставка для сервисного центра: логотип, телефон, звук</p><a class="open" href="works/gaz-preview/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="video">
+  <a class="pic" href="https://tachibanakeyko.github.io/voiceover-mix-demo/" target="_blank" rel="noopener"><img src="img/voiceover.jpg" alt="Сведение голоса с музыкой" loading="lazy"></a>
+  <div class="body"><span class="badge">Концепт</span><h3>Сведение голоса с музыкой</h3><p>Чистка голоса, ducking музыки под речь, два варианта сведения на выбор</p><a class="open" href="https://tachibanakeyko.github.io/voiceover-mix-demo/" target="_blank" rel="noopener">Открыть демо →</a></div>
+</article>
+<article class="card" data-cat="3d">
+  <div class="pic"><img src="img/terrain.jpg" alt="Low-poly остров на Unity" loading="lazy"></div>
+  <div class="body"><span class="badge order">Заказ</span><h3>Low-poly остров на Unity</h3><p>Террайн с горами, лесом и рекой по референсу, готовая сцена Unity</p><blockquote>«Всё чётко по ТЗ. Получил то, что ожидал. Шедевр)»</blockquote></div>
+</article>
+<article class="card" data-cat="3d">
+  <div class="pic"><img src="img/interior.jpg" alt="Классический интерьер в Blender" loading="lazy"></div>
+  <div class="body"><span class="badge">Концепт</span><h3>Классический интерьер в Blender</h3><p>Гостиная с лепниной и классической мебелью, свет и рендер в Blender</p></div>
+</article>
+<article class="card" data-cat="3d">
+  <div class="pic"><img src="img/wavesshooter.jpg" alt="Мобильный шутер на Unity" loading="lazy"></div>
+  <div class="body"><span class="badge order">Заказ</span><h3>Мобильный шутер на Unity</h3><p>Пиксельный топ-даун шутер с бесконечными волнами под Android: оружие, магазин, настройки, тач-управление. Потом хэллоуинское обновление с тыквами и воронами</p></div>
+</article>
+<article class="card" data-cat="3d">
+  <div class="pic"><img src="img/aoh-shop.jpg" alt="Age of Heroes — окно магазина" loading="lazy"></div>
+  <div class="body"><span class="badge order">Заказ</span><h3>Age of Heroes — окно магазина</h3><p>Страницы дизайн-документа для мобильной игры: окно пополнения с вкладками, пакетами валюты и способами оплаты, разметка элементов и цвета для программистов в стиле их документа</p><blockquote>«Отличный исполнитель! Однозначно рекомендую!»</blockquote></div>
+</article>
+<article class="card" data-cat="3d">
+  <div class="pic"><img src="img/td.jpg" alt="3D Tower Defense" loading="lazy"></div>
+  <div class="body"><span class="badge own">Unity</span><h3>3D Tower Defense</h3><p>Защита башнями с волнами врагов, эволюцией и экономикой, управление под телефон</p></div>
+</article>
+<article class="card" data-cat="3d">
+  <div class="pic"><img src="img/platformer.jpg" alt="2D-платформер" loading="lazy"></div>
+  <div class="body"><span class="badge own">Unity</span><h3>2D-платформер</h3><p>Мобильный платформер: прыжки по островам, сбор предметов, тач-управление</p></div>
+</article>
+<article class="card" data-cat="3d">
+  <div class="pic"><img src="img/strategy.jpg" alt="Экономическая стратегия" loading="lazy"></div>
+  <div class="body"><span class="badge own">Unity</span><h3>Экономическая стратегия</h3><p>Строительная стратегия на сетке: ресурсы, производство, склад</p></div>
+</article>
+<article class="card" data-cat="3d">
+  <div class="pic"><img src="img/cosmos.jpg" alt="«Масштаб» — идл-игра" loading="lazy"></div>
+  <div class="body"><span class="badge own">Свой проект</span><h3>«Масштаб» — идл-игра</h3><p>Инкрементальная игра про рост от кварка до галактик: уровни, улучшения, коллапс. Веб-версия, мини-приложение Telegram, страница на itch.io</p></div>
+</article>
+  </div>
+</main>
+
+<section class="wrap block" id="reviews">
+  <h2>Что говорят заказчики</h2>
+  <div class="revs">
+<figure class="rev"><blockquote>«Вы не просто переделали сайт, а по сути собрали новый. 5 баллов. Цена при этом вполне доступная»</blockquote><figcaption>Перенос и настройка сайта</figcaption></figure>
+<figure class="rev"><blockquote>«Отличный мастер! Убрала цифровой песок с ИИ-трека, сделала звук мягким и сбалансированным. Всё точно в срок»</blockquote><figcaption>Мастеринг по референсу</figcaption></figure>
+<figure class="rev"><blockquote>«Быстро и чётко помог решить проблемы в интеграции товаров между Тильдой и Битрикс24!»</blockquote><figcaption>Починка интеграции Тильды и Битрикс24</figcaption></figure>
+<figure class="rev"><blockquote>«Выгрузил большой объём данных, всё структурировано и корректно работает»</blockquote><figcaption>Выгрузка истории Telegram-канала</figcaption></figure>
+<figure class="rev"><blockquote>«Суперспециалист своего дела, очень быстро и чётко выполняет поставленные задачи»</blockquote><figcaption>Защита формы от спам-бота</figcaption></figure>
+<figure class="rev"><blockquote>«Специалист с большой буквы, без воды, чётко и по делу»</blockquote><figcaption>Усиление защиты сайта</figcaption></figure>
+<figure class="rev"><blockquote>«Работа выполнена раньше срока и со всеми пожеланиями в ходе разработки»</blockquote><figcaption>Морской бой</figcaption></figure>
+<figure class="rev"><blockquote>«Никто не хотел браться, а девушка в короткие сроки выполнила задачу без лишних вопросов»</blockquote><figcaption>Бинарное дерево поиска</figcaption></figure>
+<figure class="rev"><blockquote>«Всё было супер, сделано раньше сроков, помогала разобраться»</blockquote><figcaption>Программа для обработки подводных фото</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap block" id="history">
+  <h2>Все заказы</h2>
+  <p class="sub">Не всё можно показать картинкой: скрипты, интеграции, доработки чужого кода. Вот полный список с Kwork</p>
+<div class="year"><h4>2026</h4><div class="tags"><span>Доработка иллюстраций</span><span>Шаблоны эмоций А5</span><span>UI/UX окна магазина для игры</span><span>Оформление группы VK</span><span>Караоке-видео с таймингом по слогам</span><span>Доработка сайта и метрика</span><span>Страница закупок avtomatika.ru</span><span>Доработка сайта ×2</span><span>Правки террейна</span><span>Перенос и настройка сайта</span><span>Редизайн сайта ×2</span><span>Пиксель-арт персонаж, 8 направлений</span><span>Террайн для Unity</span><span>Переработка сайта и SEO</span><span>Мастеринг по референсу</span><span>Логотип и шапка по примеру</span><span>Обработка карточек товара ×4</span><span>Усиление защиты сайта</span><span>Работа с таблицами</span><span>Интеграция Тильды и Битрикс24</span><span>Защита формы от спам-бота</span><span>Выгрузка истории Telegram-канала</span><span>Мини-приложение для водителей</span></div></div>
+<div class="year"><h4>2021–2022</h4><div class="tags"><span>Мобильная игра с танками</span><span>Морской бой</span><span>Раннер про самурая</span><span>Прототип RPG</span><span>Камень, ножницы, бумага для веба</span><span>Доработка игр ×8</span><span>Исправление багов ×3</span><span>Редактор этикеток</span><span>Редактор стен</span><span>Редактор лабиринтов и правки ×3</span><span>Программа для обработки подводных фото</span><span>Графики и доработки программ ×4</span><span>Бинарное дерево поиска</span><span>Сравнение и количество</span><span>Лабораторные работы ×2</span><span>Консультации по Unity ×2</span></div></div>
+</section>
+
+<footer class="wrap">
+  <h2>Есть задача?</h2>
+  <p>Напишите на Kwork, отвечу и оценю сроки</p>
+  <a class="btn" href="https://kwork.ru/user/tachi" target="_blank" rel="noopener">Профиль на Kwork</a>
+</footer>
+
+<script>
+// фильтр по категориям
+const chips = document.querySelectorAll('.chip'), cards = document.querySelectorAll('.card');
+chips.forEach(c => c.onclick = () => {
+  chips.forEach(x => x.classList.toggle('on', x === c));
+  cards.forEach(k => k.hidden = c.dataset.f !== 'all' && k.dataset.cat !== c.dataset.f);
+});
+// лепестки
+const p = document.getElementById('petals');
+for (let i = 0; i < 14; i++) {
+  const e = document.createElement('i');
+  e.style.left = Math.random() * 110 + '%';
+  e.style.animationDuration = 9 + Math.random() * 10 + 's';
+  e.style.animationDelay = -Math.random() * 18 + 's';
+  e.style.transform = `scale(${.6 + Math.random() * .7})`;
+  p.appendChild(e);
+}
+</script>
+</body>
+</html>

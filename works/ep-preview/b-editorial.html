@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Eckstein & Partner — вариант Б</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0e3766; --blue:#4f7fb8; --paper:#f8f6f1; --line:#e2ddd2;
+  --ink:#1c232b; --muted:#5f6670; --bg:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);font-size:16px;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.serif{font-family:"Source Serif 4",Georgia,serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+header{border-bottom:1px solid var(--line);background:#fff}
+header .wrap{display:flex;align-items:center;height:96px;gap:48px}
+.logo img{height:52px;display:block}
+nav{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted);flex:1}
+nav a.on{color:var(--navy);box-shadow:inset 0 -2px 0 var(--navy);padding-bottom:4px}
+.langs{font-size:14px;font-weight:600;color:var(--muted);letter-spacing:.06em}
+.langs b{color:var(--navy)}
+.cta{background:var(--navy);color:#fff;padding:11px 20px;font-size:14px;font-weight:600;border-radius:4px}
+.burger{display:none}
+
+.hero{background:var(--paper)}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:end;padding-top:80px}
+.hero .txt{padding-bottom:88px}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font-family:"Source Serif 4",Georgia,serif;font-weight:400;font-size:60px;line-height:1.08;color:var(--navy);margin-top:18px;letter-spacing:-.015em}
+.hero h1 em{font-style:italic;color:var(--blue)}
+.hero p{font-size:19px;color:var(--muted);margin-top:24px;max-width:520px}
+.btns{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{background:var(--navy);color:#fff;padding:15px 26px;font-weight:600;font-size:15px;border-radius:4px}
+.btn.line{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.portrait{position:relative}
+.portrait img{width:100%;display:block;max-height:560px;object-fit:cover;object-position:top}
+.portrait .cap{position:absolute;left:-40px;bottom:48px;background:#fff;padding:18px 22px;box-shadow:0 12px 32px rgba(14,55,102,.12);max-width:260px}
+.cap b{font-family:"Source Serif 4",serif;font-size:34px;font-weight:600;color:var(--navy);display:block;line-height:1}
+.cap span{font-size:14px;color:var(--muted)}
+
+.numbers{border-bottom:1px solid var(--line)}
+.numbers .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.numbers .wrap>div{padding:36px 0;border-left:1px solid var(--line);padding-left:28px}
+.numbers .wrap>div:first-child{border-left:0;padding-left:0}
+.numbers b{font-family:"Source Serif 4",serif;font-size:44px;font-weight:400;color:var(--navy);line-height:1}
+.numbers span{display:block;font-size:14px;color:var(--muted);margin-top:8px}
+
+section{padding:104px 0}
+.head{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:end;margin-bottom:56px}
+h2{font-family:"Source Serif 4",Georgia,serif;font-weight:400;font-size:44px;line-height:1.12;color:var(--navy);margin-top:12px}
+.head p{color:var(--muted);font-size:17px}
+
+.svc-list{border-top:1px solid var(--ink)}
+.svc{display:grid;grid-template-columns:80px 1fr 1.3fr 40px;gap:24px;align-items:baseline;padding:30px 0;border-bottom:1px solid var(--line)}
+.svc .n{font-family:"Source Serif 4",serif;font-size:20px;color:var(--blue)}
+.svc h3{font-family:"Source Serif 4",serif;font-weight:600;font-size:26px;color:var(--navy);line-height:1.25}
+.svc p{color:var(--muted)}
+.svc .arr{color:var(--navy);font-size:24px;text-align:right}
+
+.offices{background:var(--navy);color:#fff}
+.offices h2{color:#fff}
+.offices .kicker{color:#9dbbe0}
+.offices .head p{color:#c7d6e8}
+.ogrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18)}
+.o{background:var(--navy);padding:34px 28px 30px}
+.o .city{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#9dbbe0;font-weight:600}
+.o h3{font-family:"Source Serif 4",serif;font-weight:400;font-size:30px;margin-top:6px}
+.o p{font-size:15px;color:#c7d6e8;margin-top:14px;min-height:76px}
+.o .langs2{font-size:13px;color:#9dbbe0;margin-top:14px}
+.o a{display:inline-block;margin-top:18px;border-bottom:1px solid #9dbbe0;font-weight:500;font-size:15px}
+
+.quote{background:var(--paper)}
+.quote .wrap{max-width:900px;text-align:center}
+.quote blockquote{font-family:"Source Serif 4",serif;font-size:32px;line-height:1.35;color:var(--navy);font-style:italic}
+.quote .who{margin-top:24px;font-size:14px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+
+.contact .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:72px}
+.contact dl{margin-top:28px;display:grid;grid-template-columns:110px 1fr;row-gap:14px}
+.contact dt{font-size:13px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
+.contact dd{font-size:18px;color:var(--navy)}
+form{display:grid;gap:22px;background:var(--paper);padding:40px}
+label{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+input,textarea{display:block;width:100%;margin-top:6px;font:inherit;border:0;border-bottom:1px solid #b9b2a3;background:transparent;padding:10px 0;font-size:17px}
+textarea{height:96px;resize:none}
+form .btn{justify-self:start;border:0;cursor:pointer}
+
+footer{border-top:1px solid var(--line);padding:56px 0 32px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.fgrid img{height:46px}
+.fgrid p{font-size:14px;color:var(--muted);margin-top:14px;max-width:280px}
+.fgrid h4{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-bottom:12px}
+.fgrid a{display:block;font-size:15px;color:var(--muted);line-height:2}
+.fbottom{display:flex;justify-content:space-between;margin-top:48px;font-size:13px;color:var(--muted)}
+
+@media (max-width:900px){
+  *{min-width:0}
+  body{overflow-wrap:break-word}
+  .wrap{padding:0 18px}
+  header .wrap{height:70px;justify-content:space-between}
+  .logo img{height:36px}
+  nav,.langs,.cta{display:none}
+  .burger{display:block;width:26px;height:16px;border-top:2px solid var(--navy);border-bottom:2px solid var(--navy)}
+  .hero .wrap{grid-template-columns:1fr;gap:28px;padding-top:44px}
+  .hero .txt{padding-bottom:0}
+  .hero h1{font-size:40px}
+  .portrait .cap{left:12px;bottom:12px}
+  .numbers .wrap{grid-template-columns:1fr 1fr}
+  .numbers .wrap>div{border-left:0;padding-left:0}
+  section{padding:64px 0}
+  .head{grid-template-columns:1fr;gap:16px}
+  h2{font-size:32px}
+  .svc{grid-template-columns:40px 1fr;gap:8px 12px}
+  .svc p{grid-column:2}
+  .svc .arr{display:none}
+  .ogrid{grid-template-columns:1fr}
+  .quote blockquote{font-size:24px}
+  .contact .wrap{grid-template-columns:1fr;gap:36px}
+  form{padding:24px}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .fbottom{flex-direction:column;gap:6px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#"><img src="assets/logo.png" alt="Eckstein & Partner"></a>
+    <nav><a class="on" href="#">Главная</a><a href="#">Фирма</a><a href="#">Услуги</a><a href="#">Офисы</a><a href="#">Сотрудники</a><a href="#">Контакты</a></nav>
+    <div class="langs"><b>RU</b> · EN · DE · 中文</div>
+    <a class="cta" href="#">Задать вопрос</a>
+    <div class="burger"></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="txt">
+      <div class="kicker">Eckstein & Partner · St. Gallen</div>
+      <h1>Мост между Западной Европой и <em>странами бывшего СССР</em></h1>
+      <p>Сеть независимых компаний: открываем бизнес, ведём право, бухгалтерию, налоги и ВЭД в Швейцарии, Германии, России и Узбекистане</p>
+      <div class="btns"><a class="btn" href="#">Связаться с нами</a><a class="btn line" href="#">Наши услуги</a></div>
+    </div>
+    <div class="portrait">
+      <img src="assets/eckstein.jpg" alt="">
+      <div class="cap"><b>40+ лет</b><span>на рынках бывшего Советского Союза</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="numbers">
+  <div class="wrap">
+    <div><b>40+</b><span>лет опыта</span></div>
+    <div><b>4</b><span>офиса: Швейцария, Германия, Россия, Узбекистан</span></div>
+    <div><b>4</b><span>языка: русский, немецкий, английский, китайский</span></div>
+    <div><b>11</b><span>специалистов в команде</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div><div class="kicker">Услуги</div><h2>Чем мы помогаем</h2></div>
+      <p>Поддерживаем в первую очередь немецкоязычных клиентов из Швейцарии, Австрии и Германии, а также клиентов из бывшего Советского Союза на рынках Швейцарии, Лихтенштейна, Германии и Франции</p>
+    </div>
+    <div class="svc-list">
+      <div class="svc"><span class="n">01</span><h3>Открытие бизнеса</h3><p>Дочерние компании, представительства и филиалы, выбор организационно-правовой формы, подбор персонала, юридический адрес</p><span class="arr">→</span></div>
+      <div class="svc"><span class="n">02</span><h3>Юридические консультации</h3><p>Корпоративное, договорное, процессуальное, трудовое и налоговое право, разрешения на работу и виды на жительство</p><span class="arr">→</span></div>
+      <div class="svc"><span class="n">03</span><h3>Бухгалтерия и налоги</h3><p>Постановка бухгалтерского учёта и налоговое консультирование в каждой стране присутствия</p><span class="arr">→</span></div>
+      <div class="svc"><span class="n">04</span><h3>ВЭД и таможня</h3><p>Коды ТН ВЭД, сертификация и разрешительные документы, логистика, инвестиционные проекты</p><span class="arr">→</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="offices">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="kicker">География</div><h2>Четыре офиса — одна команда</h2></div>
+      <p>Все компании сети используют общую инфраструктуру и работают по общим принципам</p>
+    </div>
+    <div class="ogrid">
+      <div class="o"><div class="city">St. Gallen</div><h3>Швейцария</h3><p>Учреждение компаний и юридическая помощь в Швейцарии, клиенты из Лихтенштейна и Австрии</p><div class="langs2">DE · RU · EN</div><a href="#">swiss@e-p.group</a></div>
+      <div class="o"><div class="city">Berlin</div><h3>Германия</h3><p>Выход на немецкий рынок для клиентов из стран бывшего Советского Союза</p><div class="langs2">DE · RU · EN</div><a href="#">berlin@e-p.group</a></div>
+      <div class="o"><div class="city">Москва</div><h3>Россия</h3><p>Российский рынок для клиентов из немецкоязычных стран</p><div class="langs2">RU · DE · EN</div><a href="#">moscow@e-p.group</a></div>
+      <div class="o"><div class="city">Ташкент</div><h3>Узбекистан</h3><p>Таможня, ВЭД, сертификация и инвестиционные проекты</p><div class="langs2">RU · DE · EN</div><a href="#">tashkent@e-p.group</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <blockquote>«В любом случае мы берём на себя всю ответственность перед клиентом, в том числе материальную»</blockquote>
+    <div class="who">Принцип работы Eckstein & Partner</div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Контакты</div>
+      <h2>Расскажите о вашей задаче</h2>
+      <dl>
+        <dt>E-mail</dt><dd>ask@e-p.group</dd>
+        <dt>Телефон</dt><dd>+41 71 571 98 53</dd>
+        <dt>Адрес</dt><dd>Spisergasse 9A, POB 411<br>9004 St. Gallen, Schweiz</dd>
+      </dl>
+    </div>
+    <form onsubmit="return false">
+      <label>Имя<input></label>
+      <label>Email<input></label>
+      <label>Сообщение<textarea></textarea></label>
+      <button class="btn">Отправить</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><img src="assets/logo.png" alt="Eckstein & Partner"><p>Поддержка международных деловых отношений</p></div>
+      <div><h4>Услуги</h4><a>Открытие бизнеса</a><a>Юридические консультации</a><a>Бухгалтерия и налоги</a><a>ВЭД и таможня</a></div>
+      <div><h4>Офисы</h4><a>Швейцария</a><a>Германия</a><a>Россия</a><a>Узбекистан</a></div>
+      <div><h4>Фирма</h4><a>О нас</a><a>Сотрудники</a><a>Контакты</a><a>Impressum</a></div>
+    </div>
+    <div class="fbottom"><span>© Eckstein & Partner, 2026</span><span>RU · EN · DE · 中文</span></div>
+  </div>
+</footer>
+</body>
+</html>
